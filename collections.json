@@ -1,0 +1,178 @@
+// Databasse: Cul_d_Ampolla(db)
+use Cul_d_Ampolla
+
+// Create collections(Tables)
+db.createCollection("proveedor");
+db.createCollection("client");
+db.createCollection("ulleres");
+db.createCollection("empleador");
+db.createCollection("venta");
+
+// Inserting into proveedor(supplier)
+db.proveedor.insertMany([
+  {
+    "nombre": "zeeloptical",
+    "proveedor_id": "proveedor_Id_001",
+    "adress": {
+      "calle": "left_street",
+      "numero": "173",
+      "ciudad": "badalona",
+      "codigo_postal": "28001",
+      "provincia": "Barcelona"
+    },
+    "telefono": "678-921-235",
+    "email": "chan@gmail.com",
+    "brand": "raybon"
+  },
+  {
+    "nombre": "moscot",
+    "proveedor_id": "proveedor_Id_002",
+    "adress": {
+      "calle": "middle_street",
+      "numero": "423",
+      "ciudad": "manresa",
+      "codigo_postal": "120045",
+      "provincia": "Barcelona"
+    },
+    "telefono": "310-547-261",
+    "email": "guccimos@hotmail.com",
+    "brand": ["gucci", "chanel", "raybon"]
+  }
+]);
+
+// Inserting into client(client)
+db.client.insertMany([
+  {
+    "client_id": "client_id_001",
+    "nombre": "masawaki",
+    "adress": {
+      "calle": "Right_street",
+      "numero": "123",
+      "ciudad": "madrid",
+      "codigo_postal": "281001",
+      "provincia": "Madrid"
+    },
+    "telefono": "678-921-235",
+    "email": "johnnybegood@email.com",
+    "registracion": new Date("2023-09-23"),
+    "recomendado_por": "client_id_002",
+    "last_shopping": [
+      {
+        "client_graduacion": {
+          "ojo_izquierdo": 2.4,
+          "ojo_derecho": 2.3
+        },
+        "glass_color": {
+          "ojo_izquierdo": "transparente",
+          "ojo_derecho": "transparente"
+        },
+        "marca": "raybon",
+        "frame_type": "metallic",
+        "precio": 120.0
+      }
+    ]
+  },
+  {
+    "client_id": "client_id_002",
+    "nombre": "alejandro",
+    "adress": {
+      "calle": "noWay_street",
+      "numero": "1003",
+      "ciudad": "granollers",
+      "codigo_postal": "00214",
+      "provincia": "Barcelona"
+    },
+    "telefono": "741-255-235",
+    "email": "jonnhybebad@badmail.com",
+    "registracion": new Date("2024-01-01"),
+    "last_shopping": [
+      {
+        "client_graduacion": {
+          "ojo_izquierdo": 2.3,
+          "ojo_derecho": 2.5
+        },
+        "glass_color": {
+          "ojo_izquierdo": "meta-black",
+          "ojo_derecho": "meta-black"
+        },
+        "marca": "gucci",
+        "frame_type": "plastico",
+        "precio": 125.0
+      }
+    ]
+  }
+]);
+
+// Inserting into empleador(employer)
+db.empleador.insertMany([
+  {
+    "_id": "empleador_Id_001",
+    "name": "Alice Rita Jones",
+    "phone": "1023456789",
+    "email": "alice.joon@pele.com",
+    "title": "sales"
+  },
+  {
+    "_id": "empleador_Id_002",
+    "name": "Bobb Mott",
+    "phone": "85476214",
+    "email": "bob.mot@exe.com",
+    "title": "technician"
+  }
+]);
+
+// Inserting into venta
+db.venta.insertMany([
+  {
+    "venta_id": "venta_id_001",
+    "saleDate": ISODate("2023-10-01T10:30:00Z"),
+    "client_id": "client_id_001",
+    "empleador_id": "empleador_Id_001",
+    "ulleres_id": "ulleres_id_002",
+    "totalPrice": 127.0
+  },
+  {
+    "venta_id": "venta_id_002",
+    "saleDate": ISODate("2023-10-15T15:45:00Z"),
+    "client_id": "client_id_002",
+    "empleador_id": "empleador_Id_002",
+    "ulleres_id": "ulleres_id_001",
+    "totalPrice": 120.0
+  }
+]);
+
+// Inserting into ulleres (glasses)
+db.ulleres.insertMany([
+  {
+    "ulleres_id": "ulleres_id_001",
+    "brand": "raybon",
+    "ulleres_graduacion": {
+      "ojo_izquierdo": 2.4,
+      "ojo_derecho": 2.3
+    },
+    "frame_type": "metallic",
+    "frame_color": "dark",
+    "glass_color": {
+      "ojo_izquierdo": "opaque",
+      "ojo_derecho": "opaque"
+    },
+    "price": 120.0,
+    "proveedor_id": "proveedor_Id_001"
+  },
+  {
+    "ulleres_id": "ulleres_id_002",
+    "brand": "gucci",
+    "ulleres_graduacion": {
+      "ojo_izquierdo": 2.0,
+      "ojo_derecho": 2.1
+    },
+    "frame_type": "plastico",
+    "frame_color": "rojo",
+    "glass_color": {
+      "ojo_izquierdo": "transparente",
+      "ojo_derecho": "transparente"
+    },
+    "price": 150.0,
+    "proveedor_id": "proveedor_Id_002"
+  }
+]);

@@ -1,0 +1,80 @@
+{
+    "Clients": [
+      {
+        "client_id": "client_id-001cli",
+        "name": "bradley",
+        "surname": "cooper",
+        "address": {
+          "postal_code": "85475",
+          "city": "santafay",
+          "province": "rimastate"
+        },
+        "telephone": "2548759631"
+      }
+    ],
+  
+    "Orders": [
+      {
+        "order_id": "order_id_001ord",
+        "client_id": "client_id-001cli",
+        "store_id": "store_id_001sto",
+        "date_time": "2024-01-02T12:00:00Z",
+        "type": "home_delivery",
+        "products": [
+          {
+            "product_id": "product_id_001pro",
+            "name": "Pizza Margarita",
+            "price": 10,
+            "quantity": 2
+          },
+          {
+            "product_id": "product_id_002pro",
+            "name": "Coke",
+            "price": 2,
+            "quantity": 1
+          }
+        ],
+        "total_price": 12,
+        "additional_note": "no ascensor",
+        "delivery_info": {
+          "delivery_person_id": "employee_id_001emp",
+          "delivery_date_time": "2023-12-29T11:30:00Z"
+        }
+      }
+    ],
+  
+    "Products": [
+      {
+        "product_id": "product_id_001pro",
+        "name": "pizza magarita",
+        "description": "pizza com magarita e queijo",
+        "image": "Image URL or Path",
+        "price": "10",
+        "category": "classico"
+      }
+    ],
+  
+    "Stores": [
+      {
+        "store_id": "store_id_001sto",
+        "address": {
+          "postal_code": "52416",
+          "city": "kanssas",
+          "province": "mariName"
+        }
+      }
+    ],
+  
+    "Employees": [
+      {
+        "employee_id": "emplyee_id_001emp",
+        "name": "sheldon",
+        "surname": "cooper",
+        "NIF": "123456789",
+        "telephone": "123456789",
+        "role": "delivery_guy",
+        "store_id": "store_id_001sto"
+      }
+    ]
+  }
+  

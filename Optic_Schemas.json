@@ -1,0 +1,85 @@
+const proveedorSchema = {
+    nombre: { type: String, required: true },
+    proveedor_id: { type: String, required: true, unique: true },
+    adress: {
+      calle:         { type: String, required: true },
+      numero:        { type: String, required: true },
+      ciudad:        { type: String, required: true },
+      codigo_postal: { type: String, required: true },
+      provincia:     { type: String, required: true }
+    },
+    telefono: { type: String,   required     : true },
+    email:    { type: String,   required     : true },
+    brand:    { type: [String], required     : true }  
+  };
+  
+
+  //clientSchema
+  const clientSchema = {
+    client_id: { type: String, required: true, unique: true },
+    nombre: { type: String, required   : true },
+    adress: {
+      calle: { type: String, required        : true },
+      numero: { type: String, required       : true },
+      ciudad: { type: String, required       : true },
+      codigo_postal: { type: String, required: true },
+      provincia: { type: String, required    : true }
+    },
+    telefono: { type: String, required  : true },
+    email: { type: String, required     : true },
+    registracion: { type: Date, required: true },
+    last_shopping: [
+      {
+        client_graduacion: {
+          ojo_izquierdo: { type: Number, required: true },
+          ojo_derecho: { type: Number, required  : true }
+        },
+        glass_color: {
+          ojo_izquierdo: { type: String, required: true },
+          ojo_derecho: { type: String, required  : true }
+        },
+        marca: { type: String, required          : true },
+        frame_type: { type: String, required     : true },
+        precio: { type: Number, required         : true }
+      }
+    ]
+  };
+
+  //salesSchema
+  const ventaSchema = {
+    venta_id:     { type: String, required: true, unique: true },
+    saleDate:     { type: Date, required  : true },
+    client_id:    { type: String, required: true }, 
+    empleador_id: { type: String, required: true }, 
+    ulleres_id:   { type: String, required: true }, 
+    totalPrice:   { type: Number, required: true }
+  };
+  
+  
+   //employersSchema
+   const empleadorSchema = {
+    _id  : { type: String, required: true, unique: true },
+    name : { type: String, required: true },
+    phone: { type: String, required: true },
+    email: { type: String, required: true },
+    title: { type: String, required: true }
+  };
+  
+    //glassesSchema
+    const ulleresSchema = {
+        ulleres_id: { type: String, required : true, unique: true },
+        brand     : { type: String, required : true },
+        ulleres_graduacion: {
+          ojo_izquierdo   : { type: Number, required  : true },
+          ojo_derecho     : { type: Number, required  : true }
+        },
+        frame_type : { type: String, required : true },
+        frame_color: { type: String, required : true },
+        glass_color: {
+          ojo_izquierdo: { type: String, required: true },
+          ojo_derecho: { type: String, required  : true }
+        },
+        price: { type: Number, required       : true },
+        proveedor_id : { type: String, required: true }
+      };
+      
