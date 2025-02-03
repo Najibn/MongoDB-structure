@@ -1,0 +1,89 @@
+
+{
+  "ulleres":[
+
+ {
+    "ulleres_id": "ulleres_id_001",          
+    "brand": "Royban",              
+    "frame_type": "Metallic",
+    "price": 105.75,
+    "proveedor_id": "proveedor_id_0001", 
+
+    "buyers": [                      
+      { 
+        "client_id":"client_id_002",
+        "purchase_date": "2023-12-01T15:30:00"
+      },
+      {
+        "client_id": "client_id_004",
+        "purchase_date": "2024-01-10T10:20:00"
+      }
+    ]
+  }
+],
+
+"proveedor":[
+
+  {
+    "proveedor_id": "proveedor_id_0001",           
+    "nombre": "Googles Associated SL",  
+
+    "address": {                     
+      "calle": "Prov Street",
+      "numero": 10,
+      "ciudad": "Prov ciudad",
+      "codigo_postal": "1245",
+      "pais": "Prov pais"
+  },
+    "telefono": "123456789",       
+    "fax": "174654321",               
+    "NIF": "A12345678"                
+  }
+],
+
+
+"client": [
+
+  {
+    "client_id":"client_id_002",          
+    "nombre": "joan", 
+
+    "address": 
+    {                    
+      "calle": "palen Street",
+      "numero": 42,
+      "ciudad": "beijing",
+      "codigo_postal": "54321",
+      "pais": "China"
+    },
+
+    "telefono": "678123456",        
+    "email": "manymany@email.com",   
+    "registration_date": "2023-09-23"
+  }
+],
+
+"venta": [
+
+  {
+    "venta_id":"venta_id_001",          
+    "client_id":"client_id_002", 
+    "ulleres_id": "ulleres_id_001",
+     "venta_date": "2024-01-11T10:25:00"
+  },
+    {                    
+      "venta_id":"venta_id_002",          
+      "client_id":"client_id_004", 
+      "ulleres_id": "ulleres_id_001",
+      "venta_date": "2024-01-13T08:20:00"
+    },
+     {                    
+      "venta_id":"venta_id_003",          
+      "client_id":"client_id_006", 
+      "ulleres_id": "ulleres_id_001",
+      "venta_date": "2024-01-18T12:40:00"
+    }
+    
+  
+  ]
+}

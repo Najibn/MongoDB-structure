@@ -17,6 +17,7 @@ db.proveedor.insertMany([
       "calle": "left_street",
       "numero": "173",
       "ciudad": "badalona",
+      "piso": "segundo",
       "codigo_postal": "28001",
       "provincia": "Barcelona"
     },
@@ -31,6 +32,7 @@ db.proveedor.insertMany([
       "calle": "middle_street",
       "numero": "423",
       "ciudad": "manresa",
+      "piso": "sexto",
       "codigo_postal": "120045",
       "provincia": "Barcelona"
     },
@@ -49,6 +51,7 @@ db.client.insertMany([
       "calle": "Right_street",
       "numero": "123",
       "ciudad": "madrid",
+      "piso": "tercera",
       "codigo_postal": "281001",
       "provincia": "Madrid"
     },
@@ -59,12 +62,13 @@ db.client.insertMany([
     "last_shopping": [
       {
         "client_graduacion": {
-          "ojo_izquierdo": 2.4,
-          "ojo_derecho": 2.3
+          "ojo_izquierdo": 2.0,
+          "ojo_derecho"  : 2.1
         },
+
         "glass_color": {
           "ojo_izquierdo": "transparente",
-          "ojo_derecho": "transparente"
+          "ojo_derecho":   "transparente"
         },
         "marca": "raybon",
         "frame_type": "metallic",
@@ -72,6 +76,7 @@ db.client.insertMany([
       }
     ]
   },
+
   {
     "client_id": "client_id_002",
     "nombre": "alejandro",
@@ -79,12 +84,14 @@ db.client.insertMany([
       "calle": "noWay_street",
       "numero": "1003",
       "ciudad": "granollers",
+      "piso": "primero",
       "codigo_postal": "00214",
       "provincia": "Barcelona"
     },
     "telefono": "741-255-235",
     "email": "jonnhybebad@badmail.com",
     "registracion": new Date("2024-01-01"),
+    "recomendado_por": "client_id_001",
     "last_shopping": [
       {
         "client_graduacion": {
@@ -106,14 +113,14 @@ db.client.insertMany([
 // Inserting into empleador(employer)
 db.empleador.insertMany([
   {
-    "_id": "empleador_Id_001",
+    "empleador_id": "empleador_Id_001",
     "name": "Alice Rita Jones",
     "phone": "1023456789",
     "email": "alice.joon@pele.com",
     "title": "sales"
   },
   {
-    "_id": "empleador_Id_002",
+    "empleador_id": "empleador_Id_002",
     "name": "Bobb Mott",
     "phone": "85476214",
     "email": "bob.mot@exe.com",
@@ -125,19 +132,23 @@ db.empleador.insertMany([
 db.venta.insertMany([
   {
     "venta_id": "venta_id_001",
-    "saleDate": ISODate("2023-10-01T10:30:00Z"),
+    "venta_date": ISODate("2023-10-01T10:30:00Z"),
     "client_id": "client_id_001",
     "empleador_id": "empleador_Id_001",
-    "ulleres_id": "ulleres_id_002",
-    "totalPrice": 127.0
-  },
+    "items": {
+      "ulleres_id":"ulleres_id_002",
+      "precio": 127.0,
+    },
+  }
   {
     "venta_id": "venta_id_002",
     "saleDate": ISODate("2023-10-15T15:45:00Z"),
     "client_id": "client_id_002",
-    "empleador_id": "empleador_Id_002",
-    "ulleres_id": "ulleres_id_001",
-    "totalPrice": 120.0
+    "empleador_id": "empleador_Id_002", 
+    "items": {
+      "ulleres_id":"ulleres_id_001",
+      "precio": 120.0,
+    },
   }
 ]);
 
@@ -146,33 +157,37 @@ db.ulleres.insertMany([
   {
     "ulleres_id": "ulleres_id_001",
     "brand": "raybon",
-    "ulleres_graduacion": {
-      "ojo_izquierdo": 2.4,
-      "ojo_derecho": 2.3
+    "graduacion": {
+      "ojo_izquierdo": 2.3,
+      "ojo_derecho": 2.5
     },
     "frame_type": "metallic",
     "frame_color": "dark",
+
     "glass_color": {
       "ojo_izquierdo": "opaque",
       "ojo_derecho": "opaque"
     },
-    "price": 120.0,
+
+    "precio": 120.0,
     "proveedor_id": "proveedor_Id_001"
   },
   {
     "ulleres_id": "ulleres_id_002",
     "brand": "gucci",
-    "ulleres_graduacion": {
+    "graduacion": {
       "ojo_izquierdo": 2.0,
       "ojo_derecho": 2.1
     },
     "frame_type": "plastico",
     "frame_color": "rojo",
+
     "glass_color": {
       "ojo_izquierdo": "transparente",
       "ojo_derecho": "transparente"
     },
-    "price": 150.0,
+
+    "precio": 150.0,
     "proveedor_id": "proveedor_Id_002"
   }
 ]);

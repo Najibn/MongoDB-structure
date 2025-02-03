@@ -1,0 +1,67 @@
+//colecciones=> usuarios, videos, canales, listas de reproducción,
+
+{
+  "videos": {
+    "video_id": "UUID",
+    "title": "string", 
+    "views": "integer",
+    "likes": "integer",
+    "dislikes": "integer",
+    "tags": ["string"],
+    "description": "string",
+    "size": "integer",
+    "state": "enum [public, hidden, private]",
+    "comments": [
+    {
+    "comment_id": "UUID",
+    "user_id": "UUID",
+    "text": "string",
+    "comment_date": "datetime",
+    "replies": [
+      {
+      "reply_id": "UUID",
+      "user_id": "UUID",
+      "text": "string",
+      "reply_date": "datetime"
+      }
+           ]
+    }
+         ]    
+  },
+
+  "usuarios": {
+    "user_id": "UUID",
+    "email": "string",
+    "password": "string",
+    "username": "string",
+    "date_of_birth": "date",
+    "gender": "string",
+    "country": "string",
+    "postal_code": "string"
+    },
+
+  "canales": {
+    "channel_id": "UUID",
+    "name": "string",
+    "user_id": "UUID"
+    
+  },
+  "suscripciones": {
+    "user_id": "UUID",
+    "channel_id": "UUID",
+    "subscription_date": "datetime"
+  },
+
+  "listas_de_reproducción": {
+    "playlist_id": "UUID",
+    "name": "string",
+    "videos": [
+    {
+    "video_id": "UUID",
+    "thumbnail": "string"
+    } ],
+   
+    "status": "enum[public, private]",
+    "creation_date": "datetime"
+  }
+}
